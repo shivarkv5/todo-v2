@@ -3,6 +3,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const _ = require('lodash');
+//When doing ._ calls lodash, defined globally
+global._ = _;
+
 const { compile } = require("ejs");
 const schema = mongoose.Schema
 const date = require(__dirname + "/date.js");
@@ -110,7 +114,7 @@ app.post("/delete", (req, res) => {
 
 app.get('/:todoType', (req, res) => {
   // res.send('The id you specified is ' + req.params.id);
-  const routeParam = req.params.todoType
+  const routeParam = _.capitalize(req.params.todoType)
 
   //Finds a list that already created with route param
   newListItem.findOne({ newListName: routeParam }, function (err, data) {
