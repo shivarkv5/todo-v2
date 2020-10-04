@@ -1,0 +1,37 @@
+<%- include("header") -%>
+
+<div class="box" id="heading">
+  <h1> <%= listTitle %> </h1>
+</div>
+
+
+<div class="box">
+  <!-- <% for (let i=0; i<newListItems.length; i++) { %>
+      <div class="item">
+        <input type="checkbox">
+        <p><%=  newListItems[i].name  %></p>
+      </div>
+      <% } %> -->
+
+  <% newListItems.forEach((singleItem) => {  %>
+
+  <form action="/delete" method="post">
+    <div class="item">
+      <!-- Here we are passing item id to delte route when checkbox gets clicked-->
+      <input type="checkbox" name="chk" value="<%= singleItem._id %>" onclick="if(this.checked){this.form.submit()}"> </input>
+      <p>  <%= singleItem.name  %>  </p>
+    </div>
+    <input type="hidden" name="listName" value="<%= listTitle %>"> </input> 
+  </form>
+  <%  })   %>
+
+
+  <form class="item" action="/" method="post">
+    <!--Here we are passing newItem and list Till now we have only item name now we will pass value-->
+    <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+    <button type="submit" name="list" value="<%= listTitle %>">+</button>
+    <!--It pass over the current list using value -->>
+  </form>
+</div>
+
+<%- include("footer") -%>

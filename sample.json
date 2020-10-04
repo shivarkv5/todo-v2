@@ -1,0 +1,19 @@
+{
+    "_id": ObjectId("5f78b3a3e703d75624669b4b"),
+    "newListName": "relaxation",
+    "newListItems": [
+        {
+            "_id": ObjectId("5f78b39fe703d75624669b48"),
+            "name": "Welcome to todo list"
+        },
+        {
+            "_id": ObjectId("5f78b39fe703d75624669b49"),
+            "name": "create a new todo"
+        },
+        {
+            "_id": ObjectId("5f78b39fe703d75624669b4a"),
+            "name": "Hit the checkbox to delete the item "
+        }
+    ],
+    "__v": 0
+}
