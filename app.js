@@ -42,7 +42,6 @@ const newListSchema = {
 // MOngoose model
 const newListItem = mongoose.model("newListItem", newListSchema)
 
-
 // const items = [];
 // const workItems = [];
 app.get("/", function (req, res) {
